@@ -1,0 +1,13 @@
+import { Schema, SchemaType, model, models } from "mongoose";
+
+const FoodSchema = new Schema(
+  {
+    FoodName: { type: String, requireed: true },
+    price: { type: Number, requireed: true },
+    ingredients: { type: String, requireed: true },
+    category: { type: SchemaType, requireed: true },
+    image: { type: String, requireed: true },
+  },
+  { timestamps: true }
+);
+const Food = models.FoodCategory || model("Food", FoodSchema);
